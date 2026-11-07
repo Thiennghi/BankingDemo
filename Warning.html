@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Warning</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fa;
+            text-align: center;
+            padding: 50px;
+            color: #333;
+        }
+
+        .box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            max-width: 500px;
+            margin: auto;
+        }
+
+        h1 {
+            color: #e74c3c;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 15px;
+            color: #856404;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background: #d35400;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #b84300;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>⚠️ Security Warning</h1>
+
+    <p><strong>This is an insecure demonstration website.</strong></p>
+
+    <p>
+        The login information you entered was sent using an insecure method 
+        and is now exposed in the URL.
+    </p>
+
+    <div class="warning">
+        <b>Risk:</b><br>
+        • Your username and password can be seen in the browser URL<br>
+        • Data may be stored in browser history<br>
+        • Sensitive information can be leaked through logs
+    </div>
+
+    <p style="margin-top:15px;">
+        ⚠️ This demonstrates a common web security vulnerability:
+        <b>Data Exposure via GET method</b>
+    </p>
+
+    <button onclick="window.history.back()">
+        ⬅ Go Back
+    </button>
+
+    
+<script>
+function goBack() {
+    window.location.href = "BankingDemo.html"; // change this
+}
+</script>
+
+
+</div>
+<br>
+<hr>
+<footer>
+<b>This is an educational website © 2026</b><br>
+<b>Create by Bryan Duong</b>
+</footer>
+
+</body>
+</html>

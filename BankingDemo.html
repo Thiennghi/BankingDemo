@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>
+Insecure Banking Demo
+</title>
+
+
+<meta charset="UTF-8">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fa;
+    color: #333;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #d35400;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #2c3e50;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    border-left: 5px solid #d35400;
+    padding-left: 10px;
+}
+
+form {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="password"],
+input[name="amount"],
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+input[type="submit"],
+button {
+    background: #d35400;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background: #b84300;
+}
+
+a {
+    display: inline-block;
+    margin: 5px 0;
+    color: #2980b9;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#commentBox,
+#result {
+    background: #fff;
+    border-left: 4px solid #3498db;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 6px;
+    min-height: 40px;
+}
+
+small {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background: #ddd;
+    margin: 25px 0;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+    color: #666;
+    font-size: 14px;
+    border-top: 1px solid #ddd;
+}
+
+/* Demo warning boxes */
+.warning {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    color: #856404;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 10px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    input[type="submit"],
+    button {
+        width: 100%;
+    }
+}
+</style>
+
+
+
+
+<!-- 
+SECURITY MISCONFIGURATION
+
+Weak security policy example.
+Production systems require
+carefully configured security headers. -->
+
+
+</head>
+
+
+<body>
+
+
+<h1>
+🏦 Insecure Banking System Demo
+</h1>
+
+
+<div class="warning">
+
+Educational purpose only.
+
+This page demonstrates common
+security weaknesses.
+
+</div>
+
+
+
+<!-- ================= LOGIN ================= -->
+
+
+<h2>
+Login
+</h2>
+
+
+<form action="Warning.html" method="GET">
+
+    <label>Username:</label><br>
+    <input  type="text" name="username">
+    <br>
+
+
+   <label>Password:</label> 
+
+    <input type="password" name="password"><br>
+
+
+    <button onclick="login()">
+   Login 
+    </button>
+
+
+</form>
+
+
+
+<!--
+
+GET METHOD DATA EXPOSURE
+
+GET places information into URL.
+
+Sensitive information may appear in:
+- Browser history
+- Logs
+- Shared URLs-->
+
+<!-- ================= CREATE ACCOUNT ================= -->
+
+
+<h2>Create Account</h2>
+
+
+<input type="newUser" placeholder="Username">
+
+
+<input type="newPass" placeholder="Password">
+
+
+<button onclick="createAccount()">Create Account</button>
+
+
+
+<!--
+
+CRYPTOGRAPHIC FAILURE
+
+Password is not protected.
+
+Real systems use password hashing.
+
+-->
+
+
+
+<!-- ================= PROFILE ================= -->
+
+
+<h2>User Profile</h2>
+
+
+<a href="profile?id=1">View Profile 1</a>
+
+
+<br>
+
+
+<a href="profile?id=2">View Profile 2</a>
+
+
+
+<!--
+
+BROKEN ACCESS CONTROL
+
+The system should verify:
+
+- Who is requesting data?
+- Are they allowed?
+
+-->
+
+
+<!-- ================= FILE UPLOAD ================= -->
+
+
+<h2>Upload Document</h2>
+
+
+<input type="file" name="file">
+
+
+<button onclick="uploadFile()">Upload</button>
+
+
+<!--
+
+MALWARE EXECUTION RISK
+
+Files should be checked:
+
+- Type validation
+- Size limits
+- Malware scanning
+
+-->
+
+<!-- ================= SEARCH ================= -->
+
+
+<h2>Search</h2>
+
+
+<input id="search">
+
+
+<button onclick="searchData()">Search</button>
+
+
+<div id="result">
+
+</div>
+
+
+<!-- XSS RISK Unsafe output 
+ rendering can allow malicious content.-->
+
+<script src="script.js"></script>
+<footer>
+<b>This is an educational website © 2026</b><br>
+<b>Create by Bryan Duong</b>
+</footer>
+
+</body>
+
+</html>
